@@ -1,0 +1,57 @@
+<div class="col-md-4 offset-md-2">
+  <div class="card">
+    <div class="card-body">
+      <form action="">
+        <div class="form-group">
+          <input
+            type="text"
+            name="title"
+            [(ngModel)]="book.title"
+            placeholder="Título"
+            class="form-control"
+            autofocus
+          />
+        </div>
+        <div class="form-group">
+          <textarea
+            name="description"
+            [(ngModel)]="book.description"
+            rows="2"
+            placeholder="Descripción"
+            class="form-control"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <input
+            type="url"
+            name="image URL"
+            [(ngModel)]="book.image"
+            placeholder="Imagen"
+            class="form-control"
+          />
+        </div>
+        <button
+          class="btn btn-success btn-block"
+          (click)="edit ? updateBook() : saveNewBook()"
+        >
+          Guardar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card card-body text-center">
+    <img
+      [src]="book.image == '' ? '/assets/noimage.png' : book.image"
+      alt="No Image"
+      class="card-img-top"
+    />
+    <h3>{{ book.id }}. {{ book.title == "" ? "Game Title" : book.title }}</h3>
+    <p>
+      {{ book.description == "" ? "Write your Descrition" : book.description }}
+    </p>
+    <p>{{ book.created_at | date: "yyyy-MM-dd" }}</p>
+  </div>
+</div>

@@ -35,4 +35,5 @@ class Server {
     }
 }
 
-new Server();
+const server = new Server();
+server.start();

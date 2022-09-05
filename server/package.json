@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc -w",
-    "dev": "nodemon build/index.js"
+    "dev": "nodemon build/index.js",
+    "build:prod": "npm run tsc",
+    "tsc": "tsc"
   },
   "keywords": [],
   "author": "",

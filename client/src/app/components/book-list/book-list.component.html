@@ -11,7 +11,7 @@
     <img class="card-img-top" [src]="book.image" />
     <div class="card-body">
       <p>{{ book.description }}</p>
-      <p>Creado a las {{ book.created_at | date: "yyyy-MM-dd" }}</p>
+      <p>Creado el {{ book.created_at | date: "yyyy-MM-dd" }}</p>
       <a [routerLink]="['/books/edit', book.id]" class="btn btn-info btn-block">
         Editar libro
       </a>
